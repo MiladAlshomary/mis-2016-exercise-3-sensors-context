@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    tools:context="mis3.milad.mis_3.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5">
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="match_parent"
+            android:max="3"
+            android:layout_height="wrap_content" />
+        <mis3.milad.mis_3.MyView
+            android:id="@+id/myviewer"
+            android:layout_below="@id/seekBar1"
+            android:layout_weight="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5">
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:max="512"
+            android:layout_height="wrap_content" />
+        <mis3.milad.mis_3.FftView
+            android:id="@+id/fftviewer"
+            android:layout_weight="0.3"
+            android:layout_below="@id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+</LinearLayout>
