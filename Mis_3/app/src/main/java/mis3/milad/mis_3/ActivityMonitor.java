@@ -36,7 +36,7 @@ public class ActivityMonitor extends IntentService implements SensorEventListene
 
     public ActivityMonitor(){
         super("my service");
-        Log.i("app", "starting backgournd service..");
+        Log.i("monitor", "starting background service..");
     }
 
     @Override
@@ -99,7 +99,7 @@ public class ActivityMonitor extends IntentService implements SensorEventListene
             this.readingsIdx = 0;
         }
 
-        Log.i("app", "mag: " + mag);
+        Log.i("monitor", "mag: " + mag);
         this.fftRecordings[readingsIdx] = mag;
         readingsIdx++;
     }
@@ -115,8 +115,8 @@ public class ActivityMonitor extends IntentService implements SensorEventListene
         }
 
         averageDeff = averageDeff/15;
-        Log.i("app", "ftt average: "  + averageDeff);
-        Log.i("app", "ftt jumps: "  + numberOfJumps);
+        Log.i("monitor", "ftt average: "  + averageDeff);
+        Log.i("monitor", "ftt jumps: "  + numberOfJumps);
 
         if(numberOfJumps  == 0 && this.userActivity != RESTING_MODE) {
             this.userActivity = RESTING_MODE;
